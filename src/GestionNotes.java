@@ -24,6 +24,29 @@ public class GestionNotes {
         System.out.println("Etudiant :" + " " + prenom + " " +   nom + " " + "(" +age + " ans)" );
         System.out.println("Matricule :" + " " +matricule );
 
+        System.out.print("Donner la note du devoir d'algorithme");
+         double devoirAlgo = clavier.nextDouble();
+        System.out.print("Donner la note d'examen d'algorithme");
+        double examenAlgo = clavier.nextDouble();
+        System.out.print("Donner la note du devoir de base de donnee");
+        double devoirBase = clavier.nextDouble();
+        System.out.print("Donner la note d'examen de base de donnee");
+        double examenBase = clavier.nextDouble();
+        System.out.print("Donner la note du devoir d'anglais");
+        double devoirAnglais = clavier.nextDouble();
+        System.out.print("Donner la note d'examen anglais");
+        double examenAnglais = clavier.nextDouble();
+
+        double moyenneAlgo = devoirAlgo * POIDS_DEVOIR + examenAlgo *POIDS_EXAMEN ;
+        double moyenneBase = devoirBase * POIDS_DEVOIR + examenBase *POIDS_EXAMEN ;
+        double moyenneAnglais = devoirAnglais * POIDS_DEVOIR + examenAnglais *POIDS_EXAMEN ;
+
+        System.out.println("Brut : " + moyenneAlgo + " | "
+                + moyenneBase + " | " + moyenneAnglais);
+
+
+
+
         clavier.close();
     }
 }
