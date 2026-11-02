@@ -44,8 +44,11 @@ public class GestionNotes {
         System.out.println("Brut : " + moyenneAlgo + " | "
                 + moyenneBase + " | " + moyenneAnglais);
 
+        int sommecoefs = COEF_ALGORITHME + COEF_ANGLAIS + COEF_BASE_DONNEES ;
 
-
+        double moyenneGenerale = ( moyenneAlgo * COEF_ALGORITHME + moyenneAnglais * COEF_ANGLAIS
+                                    + moyenneBase * COEF_BASE_DONNEES) /sommecoefs ;
+        System.out.println("Moyenne Generale = " +moyenneGenerale);
 
         clavier.close();
     }
