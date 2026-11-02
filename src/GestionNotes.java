@@ -11,18 +11,17 @@ public class GestionNotes {
         System.out.println("   RELEVÉ DE NOTES - L2");
         System.out.println("==========================");
         Scanner clavier = new Scanner(System.in);
-        System.out.print("donner le prenom");
+        System.out.print(" Prenom :");
         String prenom = clavier.nextLine();
-        System.out.print("donner le nom");
+        System.out.print("Nom :");
         String nom = clavier.nextLine();
-        System.out.print("donner l'age");
+        System.out.print(" Age :");
         int age = clavier.nextInt();
         clavier.nextLine();
-        System.out.print("donner le matricule ");
+        System.out.print(" Matricule :");
         String matricule = clavier.nextLine();
 
-        System.out.println("Etudiant :" + " " + prenom + " " +   nom + " " + "(" +age + " ans)" );
-        System.out.println("Matricule :" + " " +matricule );
+
 
         System.out.print("Donner la note du devoir d'algorithme");
          double devoirAlgo = clavier.nextDouble();
@@ -41,14 +40,33 @@ public class GestionNotes {
         double moyenneBase = devoirBase * POIDS_DEVOIR + examenBase *POIDS_EXAMEN ;
         double moyenneAnglais = devoirAnglais * POIDS_DEVOIR + examenAnglais *POIDS_EXAMEN ;
 
-        System.out.println("Brut : " + moyenneAlgo + " | "
-                + moyenneBase + " | " + moyenneAnglais);
-
         int sommecoefs = COEF_ALGORITHME + COEF_ANGLAIS + COEF_BASE_DONNEES ;
 
-        double moyenneGenerale = ( moyenneAlgo * COEF_ALGORITHME + moyenneAnglais * COEF_ANGLAIS
-                                    + moyenneBase * COEF_BASE_DONNEES) /sommecoefs ;
-        System.out.println("Moyenne Generale = " +moyenneGenerale);
+        double moyenneGenerale = (moyenneAlgo * COEF_ALGORITHME
+                + moyenneBase * COEF_BASE_DONNEES
+                + moyenneAnglais * COEF_ANGLAIS) / sommecoefs;
+
+        System.out.println();
+
+        System.out.println("Etudiant : " + prenom + " " + nom
+                + " (" + age + " ans)");
+        System.out.println("Matricule : " + matricule);
+
+        System.out.println("------------------------------");
+
+        System.out.printf("Algorithmique (coef %d) : %.2f%n",
+                COEF_ALGORITHME, moyenneAlgo);
+
+        System.out.printf("Base de donnees (coef %d) : %.2f%n",
+                COEF_BASE_DONNEES, moyenneBase);
+
+        System.out.printf("Anglais (coef %d) : %.2f%n",
+                COEF_ANGLAIS, moyenneAnglais);
+
+        System.out.println("------------------------------");
+
+        System.out.printf("Moyenne generale : %.2f / 20%n",
+                moyenneGenerale);
 
         clavier.close();
     }
